@@ -10,7 +10,7 @@ export default defineConfig({
       fileName: "production",
       formats: ["es"],
     },
-    outDir: "dist/server",
+    outDir: "dist/spa",
     target: "node22",
     ssr: true,
     rollupOptions: {
