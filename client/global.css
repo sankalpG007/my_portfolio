@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 214 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-50: 214 95% 95%;
+    --primary-100: 214 95% 90%;
+    --primary-200: 214 95% 80%;
+    --primary-300: 214 95% 70%;
+    --primary-400: 214 95% 60%;
+    --primary-500: 214 95% 55%;
+    --primary-600: 214 95% 50%;
+    --primary-700: 214 95% 45%;
+    --primary-800: 214 95% 35%;
+    --primary-900: 214 95% 25%;
+
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 98%;
+    --accent-foreground: 215 25% 27%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 31% 91%;
+    --input: 214 31% 91%;
+    --ring: 214 95% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --data-blue: 214 95% 55%;
+    --data-green: 142 76% 36%;
+    --data-orange: 25 95% 53%;
+    --data-purple: 263 70% 50%;
+    --data-pink: 328 86% 70%;
+    --data-cyan: 188 95% 48%;
+  }
+
+  .dark {
+    --background: 215 28% 9%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 28% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 214 95% 65%;
+    --primary-foreground: 215 28% 9%;
+    --primary-50: 214 95% 15%;
+    --primary-100: 214 95% 20%;
+    --primary-200: 214 95% 30%;
+    --primary-300: 214 95% 40%;
+    --primary-400: 214 95% 50%;
+    --primary-500: 214 95% 60%;
+    --primary-600: 214 95% 65%;
+    --primary-700: 214 95% 70%;
+    --primary-800: 214 95% 80%;
+    --primary-900: 214 95% 90%;
+
+    --secondary: 215 28% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 28% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 215 28% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 15%;
+    --input: 215 28% 15%;
+    --ring: 214 95% 65%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --data-blue: 214 95% 65%;
+    --data-green: 142 76% 56%;
+    --data-orange: 25 95% 63%;
+    --data-purple: 263 70% 70%;
+    --data-pink: 328 86% 80%;
+    --data-cyan: 188 95% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--data-blue)),
+      hsl(var(--data-purple))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.3);
+    transform: translateY(-2px);
+  }
+}
